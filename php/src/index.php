@@ -10,7 +10,7 @@ session_start();
 </head>
 <body>
   <div class="container">
-    <h1>🌐 Aplicação PHP + Docker</h1>
+    <h1>🌐 Aplicação PHP + Docker alterado</h1>
 
     <?php if (isset($_SESSION['user'])): ?>
       <div class="alert">
@@ -32,3 +32,4 @@ session_start();
   </div>
 </body>
 </html>
+
