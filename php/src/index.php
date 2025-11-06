@@ -21,7 +21,7 @@ session_start();
         <a href="logout.php">🚪 Sair</a>
       </div>
     <?php else: ?>
-      <p style="text-align:center;">Bem-vindooooo! Faça login ou registre-se para continuar:</p>
+      <p style="text-align:center;">Bem-vindo! Faça login ou registre-se para continuar:</p>
       <div class="nav">
         <a href="login.php">🔑 Login</a> |
         <a href="register.php">📝 Registrar</a>
