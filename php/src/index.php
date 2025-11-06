@@ -17,7 +17,7 @@ session_start();
         Olá, <strong><?= htmlspecialchars($_SESSION['user']) ?></strong>! Que bom ter você de volta.
       </div>
       <div class="nav">
-        <a href="produtos/index.php">🛒 Gerenciar Produtos</a> |
+        <a href="produtos/index.php">🛒 texto alterado</a> |
         <a href="logout.php">🚪 Sair</a>
       </div>
     <?php else: ?>
