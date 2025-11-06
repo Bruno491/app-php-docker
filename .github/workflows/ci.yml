@@ -1,0 +1,45 @@
+name: PHP Docker CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: sistema
+          MYSQL_USER: user
+          MYSQL_PASSWORD: user
+        ports:
+          - 3307:3306
+        options: >-
+          --health-cmd="mysqladmin ping --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mysqli, pdo_mysql
+
+      - name: Install dependencies
+        run: |
+          composer install || echo "No composer.json found, skipping"
+
+      - name: Run tests
+        run: |
+          echo "Aqui você pode rodar seus testes PHP" 
+          # Exemplo: phpunit tests/
